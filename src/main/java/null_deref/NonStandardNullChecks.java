@@ -7,6 +7,7 @@ public class NonStandardNullChecks {
 	public void safe() {
 		String nullValue = null;
 		if (Objects.nonNull(nullValue)) {
+			// since nonNull() already checked for null, this is not reachable
 			nullValue.toString();
 		}
 	}

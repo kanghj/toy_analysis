@@ -10,6 +10,8 @@ public class ObjectWithFields {
 	private String thing2;
 	private String thing3;
 	
+	private String nullableValue = "";
+	
 	public ObjectWithFields(int times) {
 		if (times <= 0) throw new RuntimeException();
 		StringBuilder sb = new StringBuilder();
@@ -24,6 +26,14 @@ public class ObjectWithFields {
 			nonNull = sb.toString();
 		}
 		
+	}
+	
+	public void setNullableValue(String value) {
+		nullableValue = value;
+	}
+	
+	public String getNullableValue() {
+		return nullableValue;
 	}
 	
 	public String getNull() {
