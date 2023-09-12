@@ -7,8 +7,7 @@ public class NonStandardNullChecks2 {
 	public void safe2() {
 		String anotherNull = null;
 		if (Objects.nonNull(anotherNull)) {
-			// since nonNull() already checked for null, this is not reachable 
-			anotherNull.toCharArray();
+			anotherNull.equals("with the nonNull guard, this block of code is unreachable");
 		}
 	}
 	

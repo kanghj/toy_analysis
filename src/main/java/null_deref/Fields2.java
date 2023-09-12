@@ -4,9 +4,7 @@ public class Fields2 {
 
 
 	public void safe(String anotherString) {
-		ObjectWithFields obj = new ObjectWithFields(5);	
-		// getNonNull does not return null. 
-		// Click on "View Trace" or "View source code on GitHub" to check if nonNull was correctly initialized 
+		ObjectWithFields obj = new ObjectWithFields(5);	 
 		obj.getNonNull().compareTo(anotherString);
 	}
 	
@@ -15,7 +13,7 @@ public class Fields2 {
 		obj.getNonNull().toString();
 	}
 	
-	public void safe3() {
+	public void unsafe3() {
 		ObjectWithFields obj = new ObjectWithFields(10);	 
 		obj.getNullableValue().toString();
 	}
