@@ -51,9 +51,9 @@ public class EnvUtils {
 					selfLocationTag = null;
 				}
 			} else {
-				String locationTagTmpStr = listToString(locationTagTmp);
-				if (!locationTagTmpStr.equals(selfLocationTag)) {
-					selfLocationTag = locationTagTmpStr;
+
+				if (!listToString(locationTagTmp).equals(selfLocationTag)) {
+					selfLocationTag = listToString(locationTagTmp);
 				}
 			}
 		}

@@ -3,31 +3,21 @@ package null_deref;
 public class ObjectWithFields {
 	
 	private String nonNull = null;
-
 	private final String nullValue = null;
-	
-	private String thing1;
-	private String thing2;
-	private String thing3;
-	
 	private String nullableValue;
 	
 	public ObjectWithFields(int times) {
 		if (times <= 0) throw new RuntimeException();
 		StringBuilder sb = new StringBuilder();
 		for (int i = 0; i < times; i ++) {
-			thing1 = new StringBuilder().toString();
-			thing2 = "";
-			thing3 = "";
-			sb.append("one more");
-//			nonNull = "1";
+			sb.append("non-empty string");
 		}
-		if (sb.length() > 0) {
+		if (sb.length() >= 0) {
+			// nonNull is always set to be non-null
 			nonNull = sb.toString();
 		}
 		
 		nullableValue = null;
-		
 	}
 	
 	public void setNullableValue(String value) {
