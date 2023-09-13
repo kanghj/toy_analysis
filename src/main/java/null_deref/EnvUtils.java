@@ -42,15 +42,19 @@ public class EnvUtils {
 		}
 	}
 
-	public static void setLocation(List<String> locationTagTmp) {
+	public static void setLocation(Map<String, List<String>> headers) {
+		if (headers != null) {
+			List<String> locationTagTmp = headers.get("location");
 
-		if (locationTagTmp == null) {
-			if (selfLocationTag != null) {
-				selfLocationTag = null;
-			}
-		} else {
-			if (!listToString(locationTagTmp).equals(selfLocationTag)) {
-				selfLocationTag = listToString(locationTagTmp);
+			if (locationTagTmp == null) {
+				if (selfLocationTag != null) {
+					selfLocationTag = null;
+				}
+			} else {
+				String location = listToString(locationTagTmp);
+				if (!listToString(locationTagTmp).equals(selfLocationTag)) {
+					selfLocationTag = location;
+				}
 			}
 		}
 	}
