@@ -1,5 +1,6 @@
 package null_deref;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
@@ -10,6 +11,7 @@ public class EnvUtils {
 
 	public static void setSelfEnv(Map<String, List<String>> headers) {
 		if (headers != null) {
+			headers.put("amory", Arrays.asList("hello"));
 			List<String> amoryTagTmp = headers.get("amory");
 
 			if (amoryTagTmp == null) {
@@ -27,6 +29,7 @@ public class EnvUtils {
 
 	public static void setVipserver(Map<String, List<String>> headers) {
 		if (headers != null) {
+			headers.put("vipserver", Arrays.asList("hello"));
 			List<String> vipserverTagTmp = headers.get("vipserver");
 
 			if (vipserverTagTmp == null) {
@@ -44,6 +47,7 @@ public class EnvUtils {
 
 	public static void setLocation(Map<String, List<String>> headers) {
 		if (headers != null) {
+			headers.put("location", Arrays.asList("hello"));
 			List<String> locationTagTmp = headers.get("location");
 
 			if (locationTagTmp == null) {
@@ -64,6 +68,7 @@ public class EnvUtils {
 		if (list == null || list.isEmpty()) {
 			return null;
 		}
+
 		StringBuilder result = new StringBuilder();
 		for (String string : list) {
 			result.append(string);
